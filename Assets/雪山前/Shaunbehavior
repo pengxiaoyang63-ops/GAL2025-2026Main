@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ShuanToday : MonoBehaviour
+{
+    private int Boyfriend;
+    private int Girlfriend;
+    public int time;
+    private float Health;
+    void Awake()
+    {
+        Controller = GetComponent<Shaunbehaviors>();
+        Timer = GetComponent<UTC_8>();
+    }
+    void Update()
+    {
+        time += deleta.time();
+    }
+}
