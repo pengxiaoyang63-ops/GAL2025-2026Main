@@ -10,3 +10,6 @@ Packages/packages-lock.json
 Packages/packages-lock.json
 Packages/packages-lock.json
 Assembly-CSharp.csproj
+ProjectSettings/ProjectVersion.txt
+ProjectSettings/PackageManagerSettings.asset
+Assembly-CSharp.csproj
