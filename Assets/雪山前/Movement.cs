@@ -15,9 +15,7 @@ public class Jump : MonoBehaviour
     public int test;
     public bool IsparticleOn = false;
     Vector2 velocities;
-    public bool contactground;
     public float maxspeed;
-
     public bool onwall;
     public float onwallspeed = 3f;
     public float walljump = 8f;
@@ -37,7 +35,7 @@ public class Jump : MonoBehaviour
         onground = false;
         deceleration = 1.5f;
         test = 2;
-        maxspeed = 20f;
+        maxspeed = 15f;
     }
 
     // Update is called once per frame
@@ -46,25 +44,36 @@ public class Jump : MonoBehaviour
         locomotion();
         Jumping();
         Reset();
+        FreezeZRotation();
         //Isonground();
+    }
+    void FreezeZRotation()
+    {
+        transform.localEulerAngles = new Vector3(0, 0, 0);
     }
     void locomotion()
     {
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            RD2.velocity += new Vector2(-speed, 0);
-            if (RD2.velocity.x <= -maxspeed)
+            if (RD2.velocity.x > -maxspeed)
             {
-                RD2.velocity = new Vector2(-maxspeed, RD2.velocity.y);
+                RD2.velocity = new Vector2(RD2.velocity.x-0.5f, RD2.velocity.y);
+            }
+            else
+            {
+                RD2.velocity = new Vector2(-15, RD2.velocity.y);
             }
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            RD2.velocity += new Vector2(speed, 0);
-            if (RD2.velocity.x >= maxspeed)
+            if (RD2.velocity.x < maxspeed)
             {
-                RD2.velocity = new Vector2(maxspeed, RD2.velocity.y);
+                RD2.velocity = new Vector2(RD2.velocity.x+0.5f, RD2.velocity.y);
+            }
+            else
+            {
+                RD2.velocity = new Vector2(15, RD2.velocity.y);
             }
         }
         else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
@@ -101,10 +110,7 @@ public class Jump : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow) && onground == true)
         {
             RD2.velocity = new Vector2(RD2.velocity.x, jump);
-
         }
-
-
     }
     void Reset()
     {
@@ -114,20 +120,7 @@ public class Jump : MonoBehaviour
             RD2.position = new Vector2(0, 0);
             RD2.bodyType = RigidbodyType2D.Dynamic;
         }
-
     }
-    //此为面向结果编程，之后加入检测碰撞的功能
-    /*void Isonground() 
-    {
-        if (RD2.position.y <= -1.7)
-        {
-            onground = true;
-        }
-        else { 
-            onground = false;
-        }
-    
-    }*/
     public float abs(float a)
     {
         if (a > 0)
@@ -139,9 +132,24 @@ public class Jump : MonoBehaviour
             return -a;
         }
     }
+    /*void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onground = true;
+        }
+    }
 
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onground = false;
+        }
+    }*/
+    
     // Use 2D collision callbacks because this script uses Rigidbody2D
-    void OnCollisionEnter2D(Collision2D collision)
+   /*void OnCollisionEnter2D(Collision2D collision)
     {
         foreach (ContactPoint2D contact in collision.contacts)
         {
@@ -248,7 +256,7 @@ public class Jump : MonoBehaviour
             }
             
         }
-    }
+    }*/
 
 
 }
