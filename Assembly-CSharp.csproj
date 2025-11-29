@@ -67,8 +67,10 @@
     <Compile Include="Assets\雪山前\GroundChecker.cs" />
     <Compile Include="Assets\雪山前\test.cs" />
     <Compile Include="Assets\雪山前\Movement.cs" />
+    <Compile Include="Assets\雪山前\WallChecker.cs" />
     <Compile Include="Assets\GAL official\NewBehaviourScript.cs" />
     <Compile Include="Assets\雪山前\Abcdefg.cs" />
+    <Compile Include="Assets\雪山前\GroundFixManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\雪山前\HueshiftShader.shader" />

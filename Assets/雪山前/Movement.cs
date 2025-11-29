@@ -11,12 +11,13 @@ public class Jump : MonoBehaviour
     public float speed;
     public float jump;
     public bool onground;
+    public bool onwallL;
+    public bool onwallR;
     public float deceleration;
     public int test;
     public bool IsparticleOn = false;
     Vector2 velocities;
     public float maxspeed;
-    public bool onwall;
     public float onwallspeed = 3f;
     public float walljump = 8f;
     // Start is called before the first frame update
@@ -80,7 +81,26 @@ public class Jump : MonoBehaviour
         {
             RD2.velocity = new Vector2(0, RD2.velocity.y);
         }
-
+        if (onwallL == true)
+        {
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    RD2.velocity = new Vector2(-12, 20);
+                }
+            }
+        }
+        if (onwallR == true)
+        {
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    RD2.velocity = new Vector2(12, 20);
+                }
+            }
+        }
         //deceleration function, need to work on it more
         /*else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
         {
@@ -132,6 +152,10 @@ public class Jump : MonoBehaviour
             return -a;
         }
     }
+    public void GroundFix()
+    {
+        RD2.velocity = new Vector2(RD2.velocity.x, 1);
+    }
     /*void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -147,7 +171,7 @@ public class Jump : MonoBehaviour
             onground = false;
         }
     }*/
-    
+
     // Use 2D collision callbacks because this script uses Rigidbody2D
    /*void OnCollisionEnter2D(Collision2D collision)
     {

@@ -8,7 +8,6 @@ public class GroundChecker : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             Movement.onground = true;
-            Debug.Log("True");
         }
     }
 
@@ -17,7 +16,6 @@ public class GroundChecker : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             Movement.onground = false;
-            Debug.Log("False");
         }
     }
 }
