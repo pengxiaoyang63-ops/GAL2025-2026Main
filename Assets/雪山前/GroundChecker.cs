@@ -15,7 +15,11 @@ public class GroundChecker : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Movement.onground = false;
+            Invoke("ongroundFalse", 0.1f);
         }
+    }
+    void ongroundFalse()
+    {
+        Movement.onground = false;
     }
 }
