@@ -10,7 +10,6 @@ public class WallChecker : MonoBehaviour
             if (collision.gameObject.CompareTag("Ground"))
             {
                 Movement.onwallR = true;
-                Debug.Log("True R");
             }
         }
         else
@@ -18,7 +17,6 @@ public class WallChecker : MonoBehaviour
             if (collision.gameObject.CompareTag("Ground"))
             {
                 Movement.onwallL = true;
-                Debug.Log("True L");
             }
         }
         

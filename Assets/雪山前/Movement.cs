@@ -103,13 +103,10 @@ public class Jump : MonoBehaviour
         }
         if (onwallL == true)
         {
-            Debug.Log("WJ1");
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                Debug.Log("WJ2");
                 if (Input.GetKeyDown(KeyCode.UpArrow)&&Walljumping==false)
                 {
-                    Debug.Log("WJ3");
                     WallJumpingCounter = 20;
                     Walljumping = true;
                 }
@@ -121,24 +118,19 @@ public class Jump : MonoBehaviour
             {
                 RD2.velocity = new Vector2(-WallJumpingCounter, 20);
                 WallJumpingCounter-=1;
-                Debug.Log($"Counter={WallJumpingCounter}");
             }
             else if (Input.GetKeyUp(KeyCode.UpArrow))
             {
-                Debug.Log("UpArrow UP");
                 Walljumping = false;
                 RD2.velocity = new Vector2(RD2.velocity.x, 0);
             }
         }
         if (onwallR == true)
         {
-            Debug.Log("WJ1");
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                Debug.Log("WJ2");
                 if (Input.GetKeyDown(KeyCode.UpArrow)&&Walljumping==false)
                 {
-                    Debug.Log("WJ3");
                     WallJumpingCounter = 20;
                     Walljumping = true;
                 }
@@ -146,7 +138,6 @@ public class Jump : MonoBehaviour
         }
         if (WallJumpingCounter <-9)
         {
-            Debug.Log("WJsetfalse");    
             Walljumping = false;
         }
         if (Walljumping == true && Input.GetKey(KeyCode.LeftArrow))
@@ -155,11 +146,9 @@ public class Jump : MonoBehaviour
             {
                 RD2.velocity = new Vector2(WallJumpingCounter, 15);
                 WallJumpingCounter-=1;
-                Debug.Log($"Counter={WallJumpingCounter}");
             }
             else
             {
-                Debug.Log("UpArrow UP");
                 Walljumping = false;
                 RD2.velocity = new Vector2(RD2.velocity.x, 0);
             }
@@ -181,7 +170,6 @@ public class Jump : MonoBehaviour
         {
             RD2.velocity = new Vector2(0,0);
             PreviousY = RD2.position.y;
-            Debug.Log("Dash");
             Dashing = true;
             DashWait = 0f;
             RD2.velocity = new Vector2(RD2.velocity.x,0);
@@ -204,6 +192,28 @@ public class Jump : MonoBehaviour
                 DashWait = 0f;
                 Dashing = false;
                 RD2.gravityScale = 5f;
+            }
+            if (onwallL == true && FaceRight == false)
+            {
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    if (Input.GetKeyDown(KeyCode.UpArrow)&&Walljumping==false)
+                    {
+                        Dashing = false;
+                        RD2.gravityScale = 5f;
+                    }
+                }
+            }
+            else if (onwallR == true && FaceRight == true)
+            {
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    if (Input.GetKeyDown(KeyCode.UpArrow)&&Walljumping==false)
+                    {
+                    Dashing = false;
+                    RD2.gravityScale = 5f;
+                    }
+                }
             }
         }
     }
