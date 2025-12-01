@@ -3,10 +3,9 @@ using UnityEngine;
 public class WallChecker : MonoBehaviour
 {
     public Jump Movement;
-    public bool Right;
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (Right == true)
+        if (Movement.FaceRight == true)
         {
             if (collision.gameObject.CompareTag("Ground"))
             {
@@ -24,8 +23,7 @@ public class WallChecker : MonoBehaviour
         }
         
     }
-
-    void OnCollisionExit2D(Collision2D collision)
+        void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
