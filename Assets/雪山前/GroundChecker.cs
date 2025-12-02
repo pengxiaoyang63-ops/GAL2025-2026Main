@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GroundChecker : MonoBehaviour
 {
-    public Jump Movement;
+    public Movement Movement;
     void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))

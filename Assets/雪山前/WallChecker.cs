@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WallChecker : MonoBehaviour
 {
-    public Jump Movement;
+    public Movement Movement;
     void OnCollisionStay2D(Collision2D collision)
     {
         if (Movement.FaceRight == true)

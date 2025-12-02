@@ -327,18 +327,15 @@ MonoBehaviour:
   onground: 0
   onwallL: 0
   onwallR: 0
-  Walljumping: 0
-  WallJumpingCounter: 0
-  deceleration: 0
-  test: 0
-  IsparticleOn: 0
+  WallJumpBool: 0
+  WallJumpCounter: 0
   maxspeed: 0
-  PreviousY: 0
   Dashcounter: 0
   DashWait: 0
   Timer: 0
   Dashing: 0
   FaceRight: 0
+  faceCoefficient: 0
 --- !u!50 &78931057
 Rigidbody2D:
   serializedVersion: 4
