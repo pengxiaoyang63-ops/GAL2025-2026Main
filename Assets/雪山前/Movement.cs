@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour
         }
         Reset();
         Dash();
-        //Isonground();
+        ResetY();
     }
     void faceupdate()
     {
@@ -150,6 +150,16 @@ public class Movement : MonoBehaviour
             }
         }
     }
+    void ResetY()
+    {
+        if (onground==false&&!Input.GetKey(KeyCode.UpArrow))
+        {
+            if (RD2.velocity.y > 0)
+            {
+                RD2.velocity = new Vector2(RD2.velocity.x,RD2.velocity.y/5);   
+            }
+        }
+    }
     void Dash()
     {
         if (Input.GetKey(KeyCode.Space)&&DashWait>0.5f)
@@ -163,7 +173,7 @@ public class Movement : MonoBehaviour
         }
         if(Dashing == true)
         {
-            RD2.velocity = new Vector2(40*faceCoefficient,0);
+            RD2.velocity = new Vector2(35*faceCoefficient,0);
             Dashcounter += Time.deltaTime;
             if (Dashcounter >= 0.2f)
             {
