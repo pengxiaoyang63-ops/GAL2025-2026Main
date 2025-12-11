@@ -64,6 +64,8 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.48f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\雪山前\Interaction chekcer.cs" />
+    <Compile Include="Assets\雪山前\InteractionManager.cs" />
     <Compile Include="Assets\雪山前\GroundChecker.cs" />
     <Compile Include="Assets\雪山前\test.cs" />
     <Compile Include="Assets\雪山前\Movement.cs" />
