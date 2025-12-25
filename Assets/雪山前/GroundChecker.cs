@@ -3,17 +3,21 @@ using UnityEngine;
 public class GroundChecker : MonoBehaviour
 {
     public Movement Movement;
-    void OnCollisionStay2D(Collision2D collision)
+    void Start()
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        Movement = GetComponentInParent<Movement>();
+    }
+    void OnTriggerStay2D (Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
         {
             Movement.onground = true;
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    void OnTriggerExit2D (Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Ground"))
         {
             Invoke("ongroundFalse", 0.1f);
         }

@@ -192,17 +192,6 @@ public class Movement : MonoBehaviour
             RD2.bodyType = RigidbodyType2D.Dynamic;
         }
     }
-    public float abs(float a)
-    {
-        if (a > 0)
-        {
-            return a;
-        }
-        else
-        {
-            return -a;
-        }
-    }
     public void GroundFix()
     {
         RD2.velocity = new Vector2(RD2.velocity.x, 1);

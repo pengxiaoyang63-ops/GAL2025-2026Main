@@ -6,12 +6,11 @@ public class GroundFixManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public Movement mainCharacterController;
-    void OnCollisionStay2D(Collision2D collision)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Ground"))
         {
             mainCharacterController.GroundFix();
-
         }
     }
 }
