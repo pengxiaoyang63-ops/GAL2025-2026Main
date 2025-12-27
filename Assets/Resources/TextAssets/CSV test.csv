@@ -1,0 +1,4 @@
+﻿Chapter(int),Scene(int),Clip(int),Number(int),Name(string),Text(string),Re1(string),Re2(string),Re3(string),Re4(string)
+1,1,1,1,SP,Shaun,OK,Fine,Nice,Good
+1,1,1,2,SP,"Hi,Long time no see","W, long time no see",Who are you,I love you,You are the prettiest girl I ever see in the world
+1,1,1,3,W,I don't actually know that,"Well, this is fine",It is fine,n/a,n/a

@@ -65,12 +65,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\雪山前\Interaction chekcer.cs" />
+    <Compile Include="Assets\雪山前\StoryUI.cs" />
     <Compile Include="Assets\雪山前\InteractionManager.cs" />
     <Compile Include="Assets\雪山前\GroundChecker.cs" />
     <Compile Include="Assets\雪山前\test.cs" />
     <Compile Include="Assets\雪山前\Movement.cs" />
     <Compile Include="Assets\雪山前\WallChecker.cs" />
     <Compile Include="Assets\GAL official\NewBehaviourScript.cs" />
+    <Compile Include="Assets\雪山前\PlotPlayer.cs" />
     <Compile Include="Assets\雪山前\Abcdefg.cs" />
     <Compile Include="Assets\雪山前\GroundFixManager.cs" />
   </ItemGroup>
