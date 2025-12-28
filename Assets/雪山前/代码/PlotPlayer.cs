@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-// 1. 先定义一个类，代表 CSV 中的“一行”
-// 必须加上 [System.Serializable]，否则 Unity 不会在 Inspector 里显示它
 [System.Serializable]
 public class StoryRow
 {
@@ -22,19 +20,15 @@ public class StoryRow
 
 public class PlotPlayer : MonoBehaviour
 {
-    // 2. 用我们定义的 StoryRow 类的列表来存储所有数据
-    // 这样在 Inspector 里就会显示为一个可展开的列表，每一项都有 Chapter, Name 等字段
     public List<StoryRow> StoryDataList = new List<StoryRow>();
     public static PlotPlayer Instance;
     public TextAsset csvAsset;
-
-    // 我加了一个右键菜单功能，方便你在编辑器里直接点击加载测试
-    [ContextMenu("从 CSV 加载数据")]
+    [ContextMenu("Load from CSV")]
     public void LoadFromCsv()
     {
         if (csvAsset == null)
         {
-            Debug.LogError("请先把 CSV 文件拖到 Inspector 的 Csv Asset 槽里！");
+            Debug.LogError("Can't find CSV");
             return;
         }
 
@@ -99,6 +93,7 @@ public class PlotPlayer : MonoBehaviour
 }
     void Start()
     {
+        csvAsset = Resources.Load<TextAsset>("TextAssets/CSV test");
         LoadFromCsv();
     }
     void Awake()

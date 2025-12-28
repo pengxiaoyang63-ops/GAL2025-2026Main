@@ -12,10 +12,14 @@ public class StoryUI : MonoBehaviour
     private int NumberIndex;    // 序号索引
     public bool StoryPlay;
     public int CurrentNumberIndex;
+    public CameraControl cameraControl;
     // Start is called before the first frame update
     void Start()
     {
         NumberIndex = 1;
+        cameraControl = GetComponentInChildren<CameraControl>();
+        GameObject Obj = GameObject.Find("CameraController");
+        cameraControl = Obj.GetComponent<CameraControl>();
     }
 
     // Update is called once per frame
@@ -56,6 +60,8 @@ public class StoryUI : MonoBehaviour
         {
             Debug.Log("PLayer Enter. Press J to continue.");
             StoryPlay=true;
+            cameraControl.CamX = transform.position.x;
+            cameraControl.CamY = transform.position.y;
         }
     }
     void NextPage()

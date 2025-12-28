@@ -64,20 +64,17 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.48f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\雪山前\Interaction chekcer.cs" />
-    <Compile Include="Assets\雪山前\StoryUI.cs" />
-    <Compile Include="Assets\雪山前\InteractionManager.cs" />
-    <Compile Include="Assets\雪山前\GroundChecker.cs" />
-    <Compile Include="Assets\雪山前\test.cs" />
-    <Compile Include="Assets\雪山前\Movement.cs" />
-    <Compile Include="Assets\雪山前\WallChecker.cs" />
-    <Compile Include="Assets\GAL official\NewBehaviourScript.cs" />
-    <Compile Include="Assets\雪山前\PlotPlayer.cs" />
-    <Compile Include="Assets\雪山前\Abcdefg.cs" />
-    <Compile Include="Assets\雪山前\GroundFixManager.cs" />
+    <Compile Include="Assets\雪山前\代码\test.cs" />
+    <Compile Include="Assets\雪山前\代码\GroundChecker.cs" />
+    <Compile Include="Assets\雪山前\代码\PlotPlayer.cs" />
+    <Compile Include="Assets\雪山前\代码\CameraControl.cs" />
+    <Compile Include="Assets\雪山前\代码\GroundFixManager.cs" />
+    <Compile Include="Assets\雪山前\代码\StoryUI.cs" />
+    <Compile Include="Assets\雪山前\代码\Movement.cs" />
+    <Compile Include="Assets\雪山前\代码\WallChecker.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\雪山前\HueshiftShader.shader" />
+    <None Include="Assets\雪山前\材质\HueshiftShader.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
