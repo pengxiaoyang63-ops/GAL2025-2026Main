@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    public StoryUI storyUI;
+    public StoryUILogOut storyUILogOut;
     public bool FollowPlayer;
     public Transform Playertransform;
     public float CamX;
@@ -19,8 +19,8 @@ public class CameraControl : MonoBehaviour
     {
         GameObject Obj = GameObject.Find("Player");
         Playertransform = Obj.GetComponent<Transform>();
-        Obj = GameObject.Find("StoryPlayTesting");
-        storyUI = Obj.GetComponent<StoryUI>();
+        Obj = GameObject.Find("StoryUILogOuter");
+        storyUILogOut = Obj.GetComponent<StoryUILogOut>();
         FollowPlayer = true;
         CamIndex = 0;
         fixX = false;
@@ -36,13 +36,14 @@ public class CameraControl : MonoBehaviour
     }
     void StoryPlayCheck()
     {
-        if (storyUI.StoryPlay)
+        if (storyUILogOut.StoryPlay)
             {
                 FollowPlayer = false;
                 CamIndex = 0.5f;
             }
             else
             {
+                CamIndex = 0;
                 FollowPlayer = true;
             }
     }

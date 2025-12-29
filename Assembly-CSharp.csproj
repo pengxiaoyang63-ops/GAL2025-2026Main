@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\雪山前\代码\test.cs" />
+    <Compile Include="Assets\雪山前\代码\StoryUILogOut.cs" />
     <Compile Include="Assets\雪山前\代码\GroundChecker.cs" />
     <Compile Include="Assets\雪山前\代码\PlotPlayer.cs" />
     <Compile Include="Assets\雪山前\代码\CameraControl.cs" />
