@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class StoryUI : MonoBehaviour
 {
@@ -23,7 +24,20 @@ public class StoryUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (storyUILogOut.StoryPlay == true)
+        {
+            if (storyUILogOut.ChapterIndex == ChapterIndex)
+            {
+                if (storyUILogOut.SceneIndex == SceneIndex)
+                {
+                    if (storyUILogOut.ClipIndex == ClipIndex)
+                    {
+                        cameraControl.CamX = transform.position.x;
+                        cameraControl.CamY = transform.position.y;
+                    }
+                }
+            }
+        }
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -35,6 +49,7 @@ public class StoryUI : MonoBehaviour
             cameraControl.CamIndex = 0.5f;
             storyUILogOut.StoryPlay = true;
             storyUILogOut.NumberIndex = 1;
+            storyUILogOut.CurrentNumberIndex = 1;
             SetIndex();
         }
     }

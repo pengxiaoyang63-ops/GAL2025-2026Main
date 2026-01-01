@@ -77,20 +77,20 @@ public class PlotPlayer : MonoBehaviour
     {
     // 使用 Find 方法查找第一个符合所有条件的数据
     // r 代表 List 里的每一行
-    StoryRow row = StoryDataList.Find(r => 
+        StoryRow row = StoryDataList.Find(r => 
         r.Chapter == chapter && 
         r.Scene   == scene   && 
         r.Clip    == clip    && 
         r.Number  == number
-    );
+        );
 
-    if (row == null)
-    {
-        Debug.LogWarning($"未找到剧情数据: Ch{chapter} Sc{scene} Cl{clip} No{number}");
+        if (row == null)
+        {
+            Debug.LogWarning($"Clip not found: Chapter:{chapter} Scene:{scene} Clip:{clip} Number:{number}");
+        }
+
+        return row;
     }
-
-    return row;
-}
     void Start()
     {
         csvAsset = Resources.Load<TextAsset>("TextAssets/CSV test");

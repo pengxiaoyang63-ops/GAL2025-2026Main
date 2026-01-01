@@ -10,7 +10,7 @@ public class StoryUILogOut : MonoBehaviour
     public int ClipIndex;      // 剧情片段索引
     public int NumberIndex;    // 序号索引
     public bool StoryPlay;
-    private int CurrentNumberIndex;
+    public int CurrentNumberIndex;
     
     void Start()
     {
