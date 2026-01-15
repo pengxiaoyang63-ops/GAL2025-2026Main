@@ -55,9 +55,12 @@ public class StoryUI : MonoBehaviour
     }
     void SetIndex()
     {
-        storyUILogOut.ChapterIndex = ChapterIndex;
-        storyUILogOut.SceneIndex = SceneIndex;
-        storyUILogOut.ClipIndex = ClipIndex;
+        if (storyUILogOut.ChapterIndex == 0 & storyUILogOut.SceneIndex == 0 & storyUILogOut.ClipIndex == 0)
+        {
+            storyUILogOut.ChapterIndex = ChapterIndex;
+            storyUILogOut.SceneIndex = SceneIndex;
+            storyUILogOut.ClipIndex = ClipIndex;
+        }
     }
 }
 
