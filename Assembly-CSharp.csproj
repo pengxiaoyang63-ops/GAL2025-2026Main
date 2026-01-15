@@ -59,7 +59,7 @@
     <UnityVersion>2022.3.48f1c1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\p1145\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.2.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\p1145\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.2.1\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.48f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.48f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -75,7 +75,9 @@
     <Compile Include="Assets\雪山前\代码\WallChecker.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\雪山前\kenney_1-bit-platformer-pack\Tilesheet.txt" />
     <None Include="Assets\雪山前\材质\HueshiftShader.shader" />
+    <None Include="Assets\雪山前\kenney_1-bit-platformer-pack\License.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
