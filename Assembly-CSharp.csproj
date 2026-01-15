@@ -75,9 +75,7 @@
     <Compile Include="Assets\雪山前\代码\WallChecker.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\雪山前\kenney_1-bit-platformer-pack\Tilesheet.txt" />
     <None Include="Assets\雪山前\材质\HueshiftShader.shader" />
-    <None Include="Assets\雪山前\kenney_1-bit-platformer-pack\License.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
