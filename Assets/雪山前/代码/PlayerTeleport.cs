@@ -17,8 +17,8 @@ public class PlayerTeleport : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && currentTeleporter != null)
         {
-            transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
-
+            Transform destination = currentTeleporter.GetComponent<Teleporter>().GetDestination();
+            FadeTransition(destination);
         }
     }
 
@@ -30,6 +30,13 @@ public class PlayerTeleport : MonoBehaviour
         }
     }
 
+    async void FadeTransition(Transform destination)
+    {
+        await ScreenFader.Instance.FadeOut();
+        transform.position = destination.position;
+        await ScreenFader.Instance.FadeIn();
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject == currentTeleporter)
@@ -37,4 +44,6 @@ public class PlayerTeleport : MonoBehaviour
             currentTeleporter = null;
         }
     }
+
+
 }
