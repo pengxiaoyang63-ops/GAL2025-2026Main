@@ -79,6 +79,7 @@ public class StoryUILogOut : MonoBehaviour
         if (StoryPlay)
         {
             NextPage();
+            ArtLoader currentIllustration = ArtLoaderBehaviors.Instance.GetArtLoadingList("AXY");
             StoryRow currentRow = PlotPlayer.Instance.GetStoryRow(
             ChapterIndex, 
             SceneIndex, 
