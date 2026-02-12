@@ -59,20 +59,26 @@
     <UnityVersion>2022.3.48f1c1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\Terrence Tan\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.2.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="D:\2022.3.48f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
-    <Analyzer Include="D:\2022.3.48f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
+    <Analyzer Include="C:\Users\p1145\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.2.1\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.48f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
+    <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.48f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\雪山前\代码\Checkpoint.cs" />
     <Compile Include="Assets\雪山前\代码\test.cs" />
     <Compile Include="Assets\雪山前\代码\StoryUILogOut.cs" />
+    <Compile Include="Assets\雪山前\代码\Teleporter.cs" />
     <Compile Include="Assets\雪山前\代码\GroundChecker.cs" />
     <Compile Include="Assets\雪山前\代码\PlotPlayer.cs" />
+    <Compile Include="Assets\雪山前\代码\InstaKill.cs" />
     <Compile Include="Assets\雪山前\代码\CameraControl.cs" />
     <Compile Include="Assets\雪山前\代码\GroundFixManager.cs" />
     <Compile Include="Assets\雪山前\代码\StoryUI.cs" />
     <Compile Include="Assets\雪山前\代码\Movement.cs" />
     <Compile Include="Assets\雪山前\代码\WallChecker.cs" />
+    <Compile Include="Assets\雪山前\代码\ArtLocations.cs" />
+    <Compile Include="Assets\雪山前\代码\PlayerTeleport.cs" />
+    <Compile Include="Assets\雪山前\代码\ScreenFader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\雪山前\材质\HueshiftShader.shader" />

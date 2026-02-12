@@ -10,12 +10,18 @@ public class StoryRow
     public int Clip;      // 剧情片段
     public int Number;    // 序号
     public string Name;   // 说话人名字
+    public string Illustration;   //立绘
+    public string IllState;    //立绘状态
     [TextArea(3, 10)]    // 加上这个特性，文本框会变高，方便编辑长文本
     public string Text;   // 剧情文本内容
-    public string Re1;    // 选项/回复1
-    public string Re2;    // 选项/回复2
-    public string Re3;    // 选项/回复3
-    public string Re4;    // 选项/回复4
+    public string Re1;    // 回复1
+    public string Re2;    // 回复2
+    public string Re3;    // 回复3
+    public string Re4;    // 回复4
+    public int Goto1;    // 回复1跳转
+    public int Goto2;    // 回复2跳转
+    public int Goto3;    // 回复3跳转
+    public int Goto4;    // 回复4跳转
 }
 
 public class PlotPlayer : MonoBehaviour
@@ -52,7 +58,7 @@ public class PlotPlayer : MonoBehaviour
                 continue;
             }
             string[] cols = line.Split(',');
-            if (cols.Length < 10) continue;
+            if (cols.Length < 16) continue;
 
             StoryRow row = new StoryRow();
             int.TryParse(cols[0].Trim(), out row.Chapter);
@@ -61,11 +67,17 @@ public class PlotPlayer : MonoBehaviour
             int.TryParse(cols[3].Trim(), out row.Number);
             
             row.Name = cols[4].Trim();
-            row.Text = cols[5].Trim();
-            row.Re1  = cols[6].Trim();
-            row.Re2  = cols[7].Trim();
-            row.Re3  = cols[8].Trim();
-            row.Re4  = cols[9].Trim();
+            row.Illustration = cols[5].Trim();
+            row.IllState = cols[6].Trim();
+            row.Text = cols[7].Trim();
+            row.Re1  = cols[8].Trim();
+            row.Re2  = cols[9].Trim();
+            row.Re3  = cols[10].Trim();
+            row.Re4  = cols[11].Trim();
+            int.TryParse(cols[12].Trim(), out row.Goto1);
+            int.TryParse(cols[13].Trim(), out row.Goto2);
+            int.TryParse(cols[14].Trim(), out row.Goto3);
+            int.TryParse(cols[15].Trim(), out row.Goto4);
 
             // 添加到列表中
             StoryDataList.Add(row);

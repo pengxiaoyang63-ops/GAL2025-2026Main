@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class StoryUILogOut : MonoBehaviour
@@ -11,25 +12,74 @@ public class StoryUILogOut : MonoBehaviour
     public int NumberIndex;    // 序号索引
     public bool StoryPlay;
     public int CurrentNumberIndex;
+    public bool Nextpage;
     
     void Start()
     {
         StoryPlay = false;
         NumberIndex = 1;
+        ChapterIndex = SceneIndex = ClipIndex = 0;
     }
     void NextPage()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        StoryRow currentRow = PlotPlayer.Instance.GetStoryRow(
+            ChapterIndex, 
+            SceneIndex, 
+            ClipIndex, 
+            CurrentNumberIndex
+            );
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             NumberIndex++;
+            Nextpage=true;
+            if (currentRow.Goto1 != 0)
+            {
+                CurrentNumberIndex = 1;
+                NumberIndex = 2;
+                ClipIndex = currentRow.Goto1;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            NumberIndex++;
+            Nextpage=true;
+            if (currentRow.Goto2 != 0)
+            {
+                CurrentNumberIndex = 1;
+                NumberIndex = 2;
+                ClipIndex = currentRow.Goto2;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            NumberIndex++;
+            Nextpage=true;
+            if (currentRow.Goto3 != 0)
+            {
+                CurrentNumberIndex = 1;
+                NumberIndex = 2;
+                ClipIndex = currentRow.Goto3;
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            NumberIndex++;
+            Nextpage=true;
+            if (currentRow.Goto4 != 0)
+            {
+                CurrentNumberIndex = 1;
+                NumberIndex = 2;
+                ClipIndex = currentRow.Goto4;
+            }
         }
     }
     // Update is called once per frame
     void Update()
     {
-        NextPage();
         if (StoryPlay)
         {
+            NextPage();
+            ArtLoader currentIllustration = ArtLoaderBehaviors.Instance.GetArtLoadingList("AXY");
             StoryRow currentRow = PlotPlayer.Instance.GetStoryRow(
             ChapterIndex, 
             SceneIndex, 
@@ -38,8 +88,9 @@ public class StoryUILogOut : MonoBehaviour
             );
             if (currentRow != null)
             {
-                if (CurrentNumberIndex != NumberIndex)
+                if (Nextpage)
                     {
+                        Nextpage = !Nextpage;
                         Debug.Log("=== Play ===");
                         Debug.Log($"Name:{currentRow.Name}");
                         Debug.Log($"Text {currentRow.Text}");
@@ -51,6 +102,8 @@ public class StoryUILogOut : MonoBehaviour
             }
             else
             {
+                ChapterIndex = SceneIndex = ClipIndex = 0;
+                NumberIndex = 1;
                 StoryPlay = false;
             }
         }

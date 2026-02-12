@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Interaction
+  - Teleporter
   layers:
   - Default
   - TransparentFX
