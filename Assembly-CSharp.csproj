@@ -75,6 +75,7 @@
     <Compile Include="Assets\雪山前\代码\CameraControl.cs" />
     <Compile Include="Assets\雪山前\代码\BackgroundLocations.cs" />
     <Compile Include="Assets\雪山前\代码\GroundFixManager.cs" />
+    <Compile Include="Assets\雪山前\代码\CharacterManager.cs" />
     <Compile Include="Assets\雪山前\代码\StoryUI.cs" />
     <Compile Include="Assets\雪山前\代码\Movement.cs" />
     <Compile Include="Assets\雪山前\代码\WallChecker.cs" />
