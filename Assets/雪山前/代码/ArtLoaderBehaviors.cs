@@ -71,7 +71,7 @@ public class ArtLoaderBehaviors : MonoBehaviour
     }
     void Start()
     {
-        ArtLocations = Resources.Load<TextAsset>("TextAssets/CSV ArtLocations.csv");
+        ArtLocations = Resources.Load<TextAsset>("TextAssets/CSV ArtLocations");
         LoadFromCsv();
     }
     void Awake()

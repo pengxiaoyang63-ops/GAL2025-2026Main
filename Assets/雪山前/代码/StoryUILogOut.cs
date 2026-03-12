@@ -80,6 +80,7 @@ public class StoryUILogOut : MonoBehaviour
         {
             NextPage();
             ArtLoader currentIllustration = ArtLoaderBehaviors.Instance.GetArtLoadingList("AXY");
+            BackgroundLoader currentBackgroundLoader = BackgroundLocations.Instance.GetBackgroundLoadingList("Office");
             StoryRow currentRow = PlotPlayer.Instance.GetStoryRow(
             ChapterIndex, 
             SceneIndex, 
@@ -97,7 +98,9 @@ public class StoryUILogOut : MonoBehaviour
                         Debug.Log($"Re1 {currentRow.Re1}");
                         Debug.Log($"Re2 {currentRow.Re2}");
                         Debug.Log($"Re3 {currentRow.Re3}");
-                        Debug.Log($"Re4 {currentRow.Re4}"); 
+                        
+                        Debug.Log($"Re4 {currentIllustration.IlluLocation}"); 
+                        Debug.Log($"Re4 {currentBackgroundLoader.Backgroundpath}"); 
                     }
             }
             else
